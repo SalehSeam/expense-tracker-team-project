@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simple personal expense tracker built with HTML, CSS and JavaScript.">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">ET</div>
+      <div>
+        <h1>Expense Tracker</h1>
+        <p>Simple personal finance dashboard</p>
+      </div>
+    </div>
+    <button id="clearAllBtn" class="ghost-btn">Clear All</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">PERSONAL FINANCE</span>
+        <h2>Track your money<br>without the complexity.</h2>
+        <p>Add income and expenses, see your balance instantly, and keep your transactions saved in your browser.</p>
+      </div>
+      <div class="hero-mark">৳</div>
+    </section>
+
+    <section class="summary-grid" aria-label="Financial summary">
+      <article class="summary-card">
+        <span>Total Balance</span>
+        <strong id="balance">৳0.00</strong>
+      </article>
+      <article class="summary-card income-card">
+        <span>Total Income</span>
+        <strong id="income">৳0.00</strong>
+      </article>
+      <article class="summary-card expense-card">
+        <span>Total Expense</span>
+        <strong id="expense">৳0.00</strong>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel form-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">NEW TRANSACTION</span>
+            <h3>Add transaction</h3>
+          </div>
+        </div>
+
+        <form id="transactionForm">
+          <label for="description">Description</label>
+          <input id="description" type="text" placeholder="e.g. Monthly salary" maxlength="60" required>
+
+          <label for="amount">Amount (৳)</label>
+          <input id="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required>
+
+          <label for="type">Type</label>
+          <select id="type" required>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+
+          <label for="category">Category</label>
+          <select id="category" required>
+            <option value="Salary">Salary</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Education">Education</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <button class="primary-btn" type="submit">Add Transaction</button>
+        </form>
+      </article>
+
+      <article class="panel transactions-panel">
+        <div class="panel-heading transactions-heading">
+          <div>
+            <span class="eyebrow">ACTIVITY</span>
+            <h3>Recent transactions</h3>
+          </div>
+          <span id="transactionCount" class="count-badge">0</span>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">+</div>
+          <h4>No transactions yet</h4>
+          <p>Add your first income or expense to see it here.</p>
+        </div>
+
+        <div id="transactionList" class="transaction-list"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with HTML, CSS & JavaScript • Data stays in your browser</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
