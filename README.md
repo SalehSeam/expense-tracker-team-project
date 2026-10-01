@@ -37,7 +37,7 @@ Go to:
 
 Your live website will be available at:
 
-`https://YOUR-USERNAME.github.io/YOUR-REPOSITORY-NAME/`
+`https://YOUR-USERNAME.github.io/YOUR-REPOSITORY-NAME/](https://salehseam.github.io/expense-tracker-team-project/`
 
 ## Data Privacy
 
